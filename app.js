@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const router = express.Router();
 const cors = require('cors');
 
 app.use(
@@ -10,10 +9,8 @@ app.use(
 	})
 );
 
-app.use(router);
+const indexRouter = require('./controllers/index');
 
-const expedientsRouter = require('./controllers/index');
-
-app.use('/expedients', expedientsRouter);
+app.use('/', indexRouter);
 
 module.exports = app;
