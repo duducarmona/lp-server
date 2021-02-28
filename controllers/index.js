@@ -13,4 +13,11 @@ router.get('/substitutes', (req, res) => {
 	res.send(data.substitutes);
 });
 
+// Get one expedient.
+router.get('/expedients/:id', (req, res) => {
+	const { id } = req.params;
+
+	res.send(data.expedients[id - 1]);
+});
+
 module.exports = router;
